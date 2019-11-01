@@ -32,12 +32,13 @@ function lightning() {
     if (x > width - w / 2) {
         if (t <= 0 || increasing) {
 
-            speed *= -1.1;
+            speed *= -1.3;
             t++;
             increasing = true;
         }
         if (t >= 14 || !increasing) {
-            speed *= -0.9;
+            x=380;
+            speed *= -0.75;
 
             t--;
             increasing = false;
@@ -46,23 +47,25 @@ function lightning() {
 
     if (x < 0 + w / 2) {
         if (t <= 0 || increasing) {
-            speed *= -1.1;
+            speed *= -1.3;
             t++;
             increasing = true;
         }
         if (t >= 14 || !increasing) {
-          
+        
             x = 20;
-            speed *= -0.9;
+            speed *= -0.75;
             t--;
             increasing = false;
         }
     }
     if (y > height - h / 2) {
         velocity *= -1;
+        speed*=-1.3;
     }
     if (y < 0 + h / 2) {
         velocity *= -1;
+        speed*=-1.3;
     }
     if (x >= width - w / 2 || x <= 0 + w / 2 || y >= height - h / 2 || y <= 0 + h / 2) {
         stroke((Math.random() * 51) + 200, (Math.random() * 51) + 200, 0);
